@@ -1,0 +1,17 @@
+[Unit]
+# 描述
+Description=gunicorn for teen
+# 在网络服务启动后再启动
+After=network.target
+
+[Service]
+User=time
+# 项目文件目录
+WorkingDirectory=/home/time/CODE/TeenStudy
+# gunicorn启动命令
+ExecStart=/home/time/.local/bin/gunicorn -w 4 -b 0.0.0.0:8000 server:app
+# 错误重启
+Restart=on-failure
+
+[Install]
+WantedBy=multi-user.target
