@@ -5,11 +5,11 @@ Description=gunicorn for teen
 After=network.target
 
 [Service]
-User=time
+User=usr
 # 项目文件目录
-WorkingDirectory=/home/time/CODE/TeenStudy
+WorkingDirectory=/home/usr/CODE/Youth-learning-in-Hubei
 # gunicorn启动命令
-ExecStart=/home/time/.local/bin/gunicorn -w 4 -b 0.0.0.0:8000 server:app
+ExecStart=/home/usr/.local/bin/gunicorn -w 4 -b 0.0.0.0:8000 server:app
 # 错误重启
 Restart=on-failure
 
